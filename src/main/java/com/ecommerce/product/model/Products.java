@@ -32,6 +32,12 @@ import org.springframework.data.mongodb.core.mapping.Document;
 
 
 
+	public Products() {
+		// TODO Auto-generated constructor stub
+	}
+
+
+
 	public String getId() {
 	return id;
 	}

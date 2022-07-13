@@ -25,34 +25,24 @@ import com.ecommerce.product.service.ProductService;
 
 	@PostMapping("/products")
 	public ResponseEntity<Products> create(@RequestBody Products productmodel) {
-	try {
+
 	return new ResponseEntity<Products>(productservice.createcategory(productmodel), HttpStatus.CREATED);
 
 
 
-	} catch (Exception e) {
-	return new ResponseEntity<>( HttpStatus.NOT_FOUND);
 
-
-
-	}
 	}
 
 
 
 	@GetMapping("/products")
 	public ResponseEntity<List<Products>> getallcategories() {
-	try {
+	
 	return new ResponseEntity<List<Products>>(productservice.getallcategories(), HttpStatus.OK);
 
 
 
-	} catch (Exception e) {
-	return new ResponseEntity<>(HttpStatus.NOT_FOUND);
-
-
-
-	}
+	
 	}
 
 
@@ -83,9 +73,9 @@ import com.ecommerce.product.service.ProductService;
 
 
 	@DeleteMapping("/products/{productId}")
-	public void create(@PathVariable("productId") String productId) {
+	public String create(@PathVariable("productId") String productId) {
 	productservice.deleteProductData(productId);
-
+    return "product deleted successfully";
 
 
 	}
@@ -118,6 +108,7 @@ import com.ecommerce.product.service.ProductService;
 	if (!productservice.readproduct(productId)) {
 	throw new IllegalArgumentException("product not found");
 	}
+	
 
 
 

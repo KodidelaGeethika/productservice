@@ -8,10 +8,13 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 @EnableSwagger2
 @SpringBootApplication
 @EnableEurekaClient
+
 public class ProductApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(ProductApplication.class, args);
-	}
-
+	}	
 }
+ 
+
+
