@@ -1,3 +1,3 @@
 FROM openjdk:11
-ADD target/product-service.jar product-service.jar
-ENTRYPOINT ["java","-jar","product-service.jar"]
+ADD target/spring-product-mongo.jar spring-product-mongo.jar
+ENTRYPOINT ["java","-jar","spring-product-mongo.jar"]
